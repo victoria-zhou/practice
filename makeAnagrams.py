@@ -13,13 +13,12 @@ def makeAnagram(a, b):
     s1 = set(a)
     s2 = set(b)
     for letter in s1:
-        print(letter)
         if letter not in b:
             result1 += a.count(letter)
         elif a.count(letter) > b.count(letter):
             result1 += a.count(letter) - b.count(letter)
     print(result1)
-    for letter in s2    :
+    for letter in s2:
         if letter not in a:
             result2 +=b.count(letter)
         elif a.count(letter) < b.count(letter):
