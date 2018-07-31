@@ -10,5 +10,5 @@ def multiples(n):
         print("%i x %i = %i" % (n, i, n*i))
 
 
-print(multiples(2))
-print(multiples(6))
+
+multiples(2)
