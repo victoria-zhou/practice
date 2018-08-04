@@ -16,3 +16,6 @@ if __name__ == '__main__':
     
     for i in range(size):
         findPhoneNumber(phoneBook, input())
+
+
+# if size is ne, big O is O(n) since n+n
