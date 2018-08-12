@@ -97,7 +97,6 @@ def FindMergeNode(headA, headB):
             curB = headA
         else:
             curB = curB.next
-        print(curB.data, curA.data)
     return curA.data
 
 sll1 = SinglyLinkedList()
@@ -117,5 +116,5 @@ for item in [11, 12, 13, 14]:
     sll2.tail = node
 
 
-print(FindMergeNode(sll1.head, sll2.head))
-print(findMergeNode1(sll1.head, sll2.head))
+assert FindMergeNode(sll1.head, sll2.head) == 11
+assert findMergeNode1(sll1.head, sll2.head) == 11
