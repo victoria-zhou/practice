@@ -4,7 +4,7 @@ class Node:
         self.right = right
         self.left = left
 
-class BinarTree:
+class BinaryTree:
     def __init__(self):
         self.root = Node()
 
@@ -37,7 +37,7 @@ class BinarTree:
                 node = node.right
         return result
 
-aTree = BinarTree()
+aTree = BinaryTree()
 root = None
 root = aTree.insert_node(root, 5)
 root = aTree.insert_node(root, 1)
