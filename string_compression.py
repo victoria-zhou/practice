@@ -1,5 +1,12 @@
-# naive approach using string, string is immutable, thus requires more run time
-# def str_compression(str1):
+# from io import StringIO
+import time
+
+# print('-------- Method 1: String --------')
+# #naive approach using string, string is immutable, thus requires more run time
+
+# start_time1 = time.time()
+
+# def str_compression1(str1):
 #     compare_str = str1[0]
 #     result = ''
 #     count = 0
@@ -14,10 +21,15 @@
 #     return ''.join(map(str, result))
 
 
-# print(str_compression('aaacccbbb'))
-# print(str_compression('aaacccCbbb'))
-# print(str_compression('aaacccbbbD'))
+# assert str_compression1('aaacccbbb') == 'a3c3b3'
+# assert str_compression1('aaacccCbbb') == 'a3c3C1b3'
+# assert str_compression1('aaacccbbbD') == 'a3c3b3D1'
 
+# print("--- %f seconds ---" % (time.time() - start_time1))
+
+# print('-------- Method 2: list + range --------')
+
+# start_time2 = time.time()
 # def str_compression2(str2):
 #     compare_str = str2[0]
 #     result = []
@@ -34,25 +46,14 @@
 #     result.append(str(count))
 #     return ''.join(map(str,result))
 
-# def str_compression2(str2):
-#     result = []
-#     prev = None
-#     for char in str2:
-#         if not prev:
-#             prev = char
-#             count = 1
-#         elif char == prev:
-#             count += 1
-#         else:
-#             prev = char
-#             count = 1
-#             if count == 1:
-#                 result.append(char)
-#             else:
-#                 result.append(f'{char}{count}')
-#     return ''.join(result)
+# assert str_compression2('aaacccbbb') == 'a3c3b3'
+# assert str_compression2('aaacccCbbb') == 'a3c3C1b3'
+# assert str_compression2('aaacccbbbD') == 'a3c3b3D1'
+# print("--- %f seconds ---" % (time.time() - start_time2))
 
-def str_compression2(str2):
+print('-------- Method 3: list + char, better result.append position --------')
+start_time3 = time.time()
+def str_compression3(str2):
     result = []
     prev = None
     for char in str2:
@@ -67,10 +68,29 @@ def str_compression2(str2):
             count = 1
     result.append(f'{char}{count}')
     return ''.join(result)
+assert str_compression3('aaacccbbb') == 'a3c3b3'
+assert str_compression3('aaacccCbbb') == 'a3c3C1b3'
+assert str_compression3('aaacccbbbD') == 'a3c3b3D1'
+print("--- %f seconds ---" % (time.time() - start_time3))
 
-  
-
-print(str_compression2('aaacccbbb'))
-print(str_compression2('aaacccCbbb'))
-print(str_compression2('aaacccbbbD'))
-
+# print('-------- Method 4: StringIO --------')
+# start_time4 = time.time()
+# def str_compression4(str2):
+#     file_str = StringIO()
+#     prev = None
+#     for char in str2:
+#         if not prev:
+#             prev = char
+#             count = 1
+#         elif char == prev:
+#             count += 1
+#         else:
+#             file_str.write(f'{prev}{count}')
+#             prev = char
+#             count = 1
+#     file_str.write(f'{char}{count}')  
+#     return file_str.getvalue()
+# assert str_compression4('aaacccbbb') == 'a3c3b3'
+# assert str_compression4('aaacccCbbb') == 'a3c3C1b3'
+# assert str_compression4('aaacccbbbD') == 'a3c3b3D1'
+# print("--- %f seconds ---" % (time.time() - start_time4))
