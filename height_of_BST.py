@@ -13,7 +13,7 @@ class BinarySearchTree:
             return Node(data)
         else:
             if data <= root.data:
-                current_node = self.insert(root.left,data)
+                current_node = self.insert(root.left, data)
                 root.left = current_node 
             else:
                 current_node = self.insert(root.right, data)
