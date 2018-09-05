@@ -18,6 +18,12 @@ class BST:
         else:
             self.root.left = Node(data)
 
+class Tree:
+    def __init__(self, data):
+        self.root = Node(data)
+
+    def add_node(self, data):  
+
 import sys
 def bst_helper(root, min_value, max_value):
     return (root is None or (root.data < max_value and root.data > min_value and bst_helper(root.left, min_value, root.data) and bst_helper(root.right, root.data, max_value)))
@@ -26,7 +32,7 @@ def check_BST(root):
     return bst_helper(root, -float('inf'), float('inf'))
 
 
-tree1 = BST(1)
+tree1 = Tree(1)
 for data in (2, 3, 4, 5, 6, 7):
     tree1.add_node(data)
 print(check_BST(tree1.root))
