@@ -32,7 +32,7 @@ def check_BST(root):
     return bst_helper(root, -float('inf'), float('inf'))
 
 
-tree1 = Tree(1)
+tree1 = Tree(1)      #need a tree that only gives non-BST data
 for data in (2, 3, 4, 5, 6, 7):
     tree1.add_node(data)
 print(check_BST(tree1.root))
