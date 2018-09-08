@@ -7,7 +7,7 @@ from collections import Counter
 from collections import defaultdict
 
 
-def freq_query1(queries):
+def freq_query1(queries): # know the logic
     freq = Counter()
     cnt = Counter()
     result = []
