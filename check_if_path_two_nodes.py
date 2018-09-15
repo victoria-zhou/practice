@@ -42,4 +42,5 @@ g.add_node(3, 3)
 
 u =1; v = 3
 
-assert not g.have_path(1, 3) 
+assert g.have_path(1, 3) 
+assert not g.have_path(3, 1) 
