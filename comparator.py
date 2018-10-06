@@ -4,7 +4,7 @@ class Player:
         self.name = name
         self.score = score
         
-    def __repr__(self): # know how to use this
+    def __repr__(self): # know how to use this.
         return "".join([self.name, self.score])
         
     def comparator(a, b):
