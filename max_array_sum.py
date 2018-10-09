@@ -21,10 +21,15 @@ import sys
 def max_subset_sum(arr):
     incl = excl = temp = 0
     for item in arr:
+        # print(item)
         temp = incl
+        # print(temp)
         incl = max(item + excl, temp);
+        # print(incl)
         excl = temp
+        # print(excl)
     return max(incl, excl)
 
-assert max_subset_sum([3, 5, -7, 8, 10]) == 15
+# assert max_subset_sum([3, 5, -7, 8, 10]) == 15
 assert max_subset_sum([2, 1, 5, 8, 4]) == 11
+print(max_subset_sum([3, 5, -7, 8, 10]))
