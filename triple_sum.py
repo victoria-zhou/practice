@@ -14,5 +14,5 @@ def triplets(a, b, c):
     return sum([bisect(a, x) * bisect(c, x) for x in reversed(c)])
 
 
-print(triplets([1, 4 ,5], [2, 3, 3], [1, 2, 3]))
-# assert triplets([1, 3, 5], [2, 3], [1, 2, 3]) == 8
+assert triplets([1, 4 ,5], [2, 3, 3], [1, 2, 3]) == 5
+# assert triplets([1, 3, 5], [2, 3], [1, 2, 3]) == 8 
