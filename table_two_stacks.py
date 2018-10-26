@@ -25,7 +25,7 @@ class MyQueue(object):
         
 
 queue = MyQueue()
-print('Please type integer, one or two together') //
+print('Please type integer, one or two together') // know how to use this
 t = int(input())
 for line in range(t):
     values = map(int, input().split())
