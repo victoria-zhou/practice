@@ -1,4 +1,2 @@
 # practice
-A repository that records my algorithm practices. 
-
-Add simpleArraySum
+A repository that records algorithm practices. 
